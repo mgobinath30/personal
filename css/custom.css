@@ -23,15 +23,15 @@ footer {
 
 .slider-container .superText {
     font-family: 'Open Sans', sans-serif;
-    font-size: 50px;
+    font-size: 40px;
     color: #46a40e;
     font-weight: bolder;
-    line-height: 55px;
+    line-height: 50px;
     margin-bottom: 40px;
 }
 
 p.subtext {
-    font-size: 35px;
+    font-size: 30px;
     font-weight: 100;
     line-height: 40px;
 }
@@ -41,14 +41,14 @@ p.subtext span {
 }
 
 h1.grandParentText {
-    font-size: 80px;
+    font-size: 70px;
     font-weight: bolder;
 }
 
 p.subbaseText {
-    font-size: 40px;
+    font-size: 36px;
     font-weight: 100;
-    line-height: 40px;
+    line-height: 30px;
 }
 
 h2.subMainText {
@@ -74,7 +74,7 @@ h2.subMainText {
 .slider-container input.btn.btn-success {
     text-transform: uppercase;
     background: #46a40e;
-    padding: 15px 70px;
+    padding: 10px 30px;
     font-weight: 100;
     font-size: 20px;
 }
@@ -92,7 +92,7 @@ div#google_translate_element {
 p.headerIcon label {
     font-size: 15px;
     font-family: 'Open Sans', sans-serif;
-    font-weight: 200;
+    font-weight: 500;
     position: relative;
     top: -2px;
 }
@@ -223,7 +223,7 @@ h2.subMainText span {
 }
 
 .carouselmsg {
-    margin-top: 20px;
+    margin-top: 65px;
 }
 
 a.nav-link {
@@ -243,13 +243,18 @@ nav.navbar {
     background: url(../img/title_bar.png) no-repeat;
     text-transform: uppercase;
     font-weight: 100;
+    background-position: bottom;
+    background-size: contain;
+    margin-bottom: 20px;
+    text-align: center;
+    padding: 10px 10px;
 }
 
 .aboutus p {
     line-height: 28px;
     font-family: 'Open Sans', sans-serif;
     font-weight: 100;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 #aboutus {
@@ -336,19 +341,24 @@ nav.navbar {
     border-color: #ddd;
 }
 
-#success_message{ display: none;}
+#success_message {
+    display: none;
+}
 
 fieldset {
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
     font-weight: 300;
 }
-.orange{
-    color:#ff6300 !important;
+
+.orange {
+    color: #ff6300 !important;
 }
-.blue{
-    color:#0059AB !important;
+
+.blue {
+    color: #0059AB !important;
 }
+
 .row.aimwell {
     font-family: 'Open Sans', sans-serif;
     font-size: 14px;
@@ -360,6 +370,75 @@ fieldset {
     padding: 0px;
 }
 
-.ping{
-    color:#ED197A !important;
+.ping {
+    color: #ED197A !important;
+}
+
+.carouselimg {
+    padding: 0px;
+}
+
+.carouselmsg {
+    padding: 0px;
+}
+
+.aboutus .row {
+    margin-bottom: 45px;
+}
+
+.aimwellimg {
+    padding-top: 20px;
+}
+
+.aimjustice {
+    background: url(../img/aim/aim-justice-image.jpg) no-repeat center center fixed;
+    background-size: 27%;
+}
+
+.aimright{
+    background: url('../img/aim/aim-bg-image1.png') no-repeat center center fixed;
+}
+
+#aimleftcontain{
+    background: url('../img/aim/aim-bg-image1.png') no-repeat 0% 0;;
+    background-size: 14%;
+    background-position: left;
+}
+
+#aimrightcontain{
+    background: url('../img/aim/aim-bg-image2.png') no-repeat 100% 0;;
+    background-size: 16%;
+    background-position: right;
+
+}
+
+.background{
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: -1;
+}
+.videogal img {
+    margin-bottom: 20px;
+    /* clear: both; */
+}
+
+/*images with the same width*/
+.thumbnail {
+    height: 300px;
+    /* width: 400px; */
+    overflow: hidden;
+    border: 1px solid #ccc;
+    margin: 5px;
+    border-radius: 5px;
+}
+.thumbnail img {
+    height: auto;
+    width: 100%;
+}
+
+.pageTop{
+    margin-top:55px;
 }
