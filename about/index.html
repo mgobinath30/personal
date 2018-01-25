@@ -1220,8 +1220,15 @@
 					count++;
 					if (newname == a[0] && (newname != '' && a[0] != '') && count != 1) {
 						if (e.target.parentElement.children.length > 1) {
+							var smopened = $(".sm-responseMobile-switch li");
+
+							/* for (let i = 0; i < smopened.length; i++) {
+								if ($(smopened[i]).hasClass('sm-opened')) {
+									$(smopened[i]).removeClass('sm-opened')
+								}
+							} */
 							let openedDiv = e.target.parentElement.children[e.target.parentElement.children.length - 1];
-							$(openedDiv).toggle()
+							$(openedDiv).toggle();
 						}
 						//$('.smartmenu.sm-responseMobile-switch:hover >li').css('display', 'none')
 						//$('.smartmenu.sm-response-switch:before').css('opacity', '1')
@@ -1231,16 +1238,15 @@
 						a = a.slice(a.length - 1);
 					}
 				});
-               var toggleCount = 0;
+				var toggleCount = 0;
 				$(".smartmenu[class*='sm-response'] >li.sm-responsive-toggle").click(function () {
 					toggleCount++;
 
-					if(toggleCount %2 == 0){
-					    $('.smartmenu.sm-responseMobile-switch:hover >li').css('display', 'none')
+					if (toggleCount % 2 == 0) {
+						$('.smartmenu.sm-responseMobile-switch:hover >li').css('display', 'none')
 						$('.smartmenu.sm-response-switch:before').css('opacity', '1')
 						$('.smartmenu[class*="sm-response"] >li.sm-responsive-toggle').css('display', 'block')
-					}
-					else{
+					} else {
 						$('.smartmenu.sm-responseMobile-switch:hover >li').css('display', 'block')
 						$('.smartmenu.sm-response-switch:before').css('opacity', '0.5')
 					}
@@ -1249,7 +1255,13 @@
 			}, 20)
 		});
 	</script>
-
+<style>
+	@media only screen and (max-width: 500px) {
+		.smartmenu.sm-response-switch:hover:before {
+			opacity:1;
+		}
+	}
+	</style>
 </body>
 
 </html>
