@@ -1207,6 +1207,7 @@
 				console.log('called');
 				setTimeout(() => {
 					$('.sm-response-switch').addClass('sm-responseMobile-switch');
+					$('.sm-active').addClass('defaultHighlight');
 				}, 10)
 			}
 		});
@@ -1215,20 +1216,25 @@
 				var a = [];
 				var count = 0;
 				$(".sm-responseMobile-switch li a").click(function (e) {
+					console.log(e);
+					$('.sm-active').removeClass('defaultHighlight');
+					$(e.target.parentElement).toggleClass('sm-opened-active');
 					var newname = e.target.innerText;
 					a.push(newname);
 					count++;
+					var smopened = $(".sm-responseMobile-switch li");
+
+					/*for (let i = 0; i < smopened.length; i++) {
+						if ($(smopened[i]).hasClass('sm-opened')) {
+							$(smopened[i]).removeClass('sm-opened')
+						}
+					}
+					e.target.parentElement.className = 'sm-opened';*/
 					if (newname == a[0] && (newname != '' && a[0] != '') && count != 1) {
 						if (e.target.parentElement.children.length > 1) {
-							var smopened = $(".sm-responseMobile-switch li");
-
-							/* for (let i = 0; i < smopened.length; i++) {
-								if ($(smopened[i]).hasClass('sm-opened')) {
-									$(smopened[i]).removeClass('sm-opened')
-								}
-							} */
 							let openedDiv = e.target.parentElement.children[e.target.parentElement.children.length - 1];
 							$(openedDiv).toggle();
+							e.target.parentElement.className = '';
 						}
 						//$('.smartmenu.sm-responseMobile-switch:hover >li').css('display', 'none')
 						//$('.smartmenu.sm-response-switch:before').css('opacity', '1')
@@ -1240,6 +1246,7 @@
 				});
 				var toggleCount = 0;
 				$(".smartmenu[class*='sm-response'] >li.sm-responsive-toggle").click(function () {
+					$('.sm-active').addClass('defaultHighlight');
 					toggleCount++;
 
 					if (toggleCount % 2 == 0) {
@@ -1255,12 +1262,22 @@
 			}, 20)
 		});
 	</script>
-<style>
-	@media only screen and (max-width: 500px) {
-		.smartmenu.sm-response-switch:hover:before {
-			opacity:1;
+	<style>
+		@media only screen and (max-width: 500px) {
+			.smartmenu.sm-response-switch:hover:before {
+				opacity: 1;
+			}
+			.defaultHighlight {
+				background-color: #22cfbb !important;
+			}
+			.smartmenu>li:hover,
+			.smartmenu>li.sm-opened {
+				background-color: #22cfbb;
+			}
+			.smartmenu>li.sm-active {
+				background: transparent;
+			}
 		}
-	}
 	</style>
 </body>
 
