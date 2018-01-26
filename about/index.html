@@ -86,7 +86,7 @@
 						<i class="sm-caret fa fa-angle-down"></i>
 					</a>
 
-					<ul data-sm-size="200">
+					<ul data-sm-size="200" id="flyout">
 
 						<li>
 							<a>
@@ -201,7 +201,7 @@
 						<i class="sm-caret fa fa-angle-down"></i>
 					</a>
 
-					<div class="sm-custom-bg">
+					<div class="sm-custom-bg" id="mega">
 
 						<div class="sm-row">
 
@@ -335,7 +335,7 @@
 						<i class="sm-caret fa fa-angle-down"></i>
 					</a>
 
-					<div>
+					<div id="grid">
 
 						<div class="sm-row">
 							<div class="sm-col c-1">
@@ -568,7 +568,7 @@
 						<i class="sm-caret fa fa-angle-down"></i>
 					</a>
 
-					<div>
+					<div id="gallery">
 
 						<div class="sm-row">
 
@@ -609,7 +609,7 @@
 						<i class="sm-caret fa fa-angle-down"></i>
 					</a>
 
-					<div class="sm-no-space">
+					<div class="sm-no-space" id="contact">
 
 						<div class="sm-row">
 							<div class="sm-col c-5 sm-no-space">
@@ -1206,81 +1206,64 @@
 				navigator.userAgent.match(/iPod/i)) {
 				console.log('called');
 				setTimeout(() => {
-					$('.sm-response-switch').addClass('sm-responseMobile-switch');
-					$('.sm-active').addClass('defaultHighlight');
+                    $('.sm-response-switch').addClass('sm-responseMobile-switch');
+                    $('.sm-active').addClass('defaultHighlight');
 				}, 10)
 			}
 		});
 		$(document).ready(function () {
 			setTimeout(() => {
-				var a = [];
-				var count = 0;
-				$(".sm-responseMobile-switch li a").click(function (e) {
-					$('.sm-active').removeClass('defaultHighlight');
-					var newname = e.target.innerText;
-					a.push(newname);
-					count++;
-					for (var i = 0; i < $('.sm-responseMobile-switch li').length; i++) {
+			var a = [];
+			var count = 0;
+			$(".sm-responseMobile-switch li a").click(function (e) {
+                $('.sm-active').removeClass('defaultHighlight');
+				var newname = e.target.innerText;
+				a.push(newname);
+                count++;
+                for (var i = 0; i < $('.sm-responseMobile-switch li').length; i++) {
 						$('.sm-responseMobile-switch li').removeAttr('style')
 					}
-					/*if(!$(e.target.parentElement).hasClass('sm-opened')){
-						e.target.parentElement.classList.add("sm-opened");
-					}*/
-					if (newname == a[0] && (newname != '' && a[0] != '') && count != 1) {
-						let openedDiv = e.target.parentElement.children[e.target.parentElement.children.length - 1];
-						$(openedDiv).toggle();
-						debugger
-						console.log(e)
-						/*if(e.target.parentElement.lastElementChild.localName == 'ul'){
-							e.target.parentElement.classList.remove("sm-opened");
-						}*/
-						//e.target.parentElement.classList.add("removedefaultHighlight");
-						//e.target.parentElement.classList.remove("sm-opened");
+				if (newname == a[0] && (newname != '' && a[0] != '') && count != 1) {
+                    var selecterElementId = e.target.parentElement.lastElementChild.id;
+                   // $('#'+selecterElementId).toggle();
+                    if($(e.target.parentElement).hasClass('sm-opened')){
+                        $(e.target.parentElement).removeClass('sm-opened');
+                        $('#'+selecterElementId).hide();
+                        $('#'+selecterElementId).css('display','none');
+                    }
+                    else{
+                        $(e.target.parentElement).addClass('sm-opened');
+                        $('#'+selecterElementId).show();
+                        $('#'+selecterElementId).css('display','block');
+                    }
+				}
+				if (a.length > 1) {
+					a = a.slice(a.length - 1);
+				}
+			});
 
-						//$(e.target.parentElement).removeclass('sm-opened');
-						//$('.smartmenu.sm-responseMobile-switch:hover >li').css('display', 'none')
-						//$('.smartmenu.sm-responseMobile-switch:hover:before').css('opacity', '1')
-						//$('.smartmenu[class*="sm-response"] >li.sm-responsive-toggle').css('display', 'block')
-					}
-					if (a.length > 1) {
-						a = a.slice(a.length - 1);
-					}
-				});
+            var toggleCount = 0;
+            $(".smartmenu[class*='sm-response'] >li.sm-responsive-toggle").click(function () {
+                $('.sm-active').addClass('defaultHighlight');
+                toggleCount++;
+                if (toggleCount % 2 == 0) {
+                    $('.smartmenu.sm-responseMobile-switch:hover >li').css('display', 'none')
+                    $('.smartmenu.sm-response-switch:before').css('opacity', '1')
+                    $('.smartmenu[class*="sm-response"] >li.sm-responsive-toggle').css('display', 'block')
+                } else {
+                    $('.smartmenu.sm-responseMobile-switch:hover >li').css('display', 'block')
+                    $('.smartmenu.sm-response-switch:before').css('opacity', '0.5')
+                }
+            });
 
-				var toggleCount = 0;
-				$(".smartmenu[class*='sm-response'] >li.sm-responsive-toggle").click(function () {
-					$('.sm-active').addClass('defaultHighlight');
-					toggleCount++;
-					if (toggleCount % 2 == 0) {
-						$('.smartmenu.sm-responseMobile-switch:hover >li').css('display', 'none')
-						$('.smartmenu.sm-response-switch:before').css('opacity', '1')
-						$('.smartmenu[class*="sm-response"] >li.sm-responsive-toggle').css('display', 'block')
-					} else {
-						$('.smartmenu.sm-responseMobile-switch:hover >li').css('display', 'block')
-						$('.smartmenu.sm-response-switch:before').css('opacity', '0.5')
-					}
-				});
-
-			}, 20)
+		}, 20)
 		});
-	</script>
-	<style>
+    </script>
+    
+    <style>
 		@media only screen and (max-width: 500px) {
-			.smartmenu.sm-response-switch:hover:before {
-				opacity: 1;
-			}
 			.defaultHighlight {
 				background-color: #22cfbb !important;
-			}
-			.smartmenu>li:hover,
-			.smartmenu>li.sm-opened {
-				background-color: #22cfbb;
-			}
-			.smartmenu>li.sm-active {
-				background: transparent;
-			}
-			.removedefaultHighlight {
-				background-color: transparent !important;
 			}
 		}
 	</style>
