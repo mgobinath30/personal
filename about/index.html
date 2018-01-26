@@ -1216,39 +1216,41 @@
 				var a = [];
 				var count = 0;
 				$(".sm-responseMobile-switch li a").click(function (e) {
-					console.log(e);
 					$('.sm-active').removeClass('defaultHighlight');
-					$(e.target.parentElement).toggleClass('sm-opened-active');
 					var newname = e.target.innerText;
 					a.push(newname);
 					count++;
-					var smopened = $(".sm-responseMobile-switch li");
-
-					/*for (let i = 0; i < smopened.length; i++) {
-						if ($(smopened[i]).hasClass('sm-opened')) {
-							$(smopened[i]).removeClass('sm-opened')
-						}
+					for (var i = 0; i < $('.sm-responseMobile-switch li').length; i++) {
+						$('.sm-responseMobile-switch li').removeAttr('style')
 					}
-					e.target.parentElement.className = 'sm-opened';*/
+					/*if(!$(e.target.parentElement).hasClass('sm-opened')){
+						e.target.parentElement.classList.add("sm-opened");
+					}*/
 					if (newname == a[0] && (newname != '' && a[0] != '') && count != 1) {
-						if (e.target.parentElement.children.length > 1) {
-							let openedDiv = e.target.parentElement.children[e.target.parentElement.children.length - 1];
-							$(openedDiv).toggle();
-							// e.target.parentElement.className = '';
-						}
+						let openedDiv = e.target.parentElement.children[e.target.parentElement.children.length - 1];
+						$(openedDiv).toggle();
+						debugger
+						console.log(e)
+						/*if(e.target.parentElement.lastElementChild.localName == 'ul'){
+							e.target.parentElement.classList.remove("sm-opened");
+						}*/
+						//e.target.parentElement.classList.add("removedefaultHighlight");
+						//e.target.parentElement.classList.remove("sm-opened");
+
+						//$(e.target.parentElement).removeclass('sm-opened');
 						//$('.smartmenu.sm-responseMobile-switch:hover >li').css('display', 'none')
-						//$('.smartmenu.sm-response-switch:before').css('opacity', '1')
+						//$('.smartmenu.sm-responseMobile-switch:hover:before').css('opacity', '1')
 						//$('.smartmenu[class*="sm-response"] >li.sm-responsive-toggle').css('display', 'block')
 					}
 					if (a.length > 1) {
 						a = a.slice(a.length - 1);
 					}
 				});
+
 				var toggleCount = 0;
 				$(".smartmenu[class*='sm-response'] >li.sm-responsive-toggle").click(function () {
 					$('.sm-active').addClass('defaultHighlight');
 					toggleCount++;
-
 					if (toggleCount % 2 == 0) {
 						$('.smartmenu.sm-responseMobile-switch:hover >li').css('display', 'none')
 						$('.smartmenu.sm-response-switch:before').css('opacity', '1')
@@ -1257,8 +1259,8 @@
 						$('.smartmenu.sm-responseMobile-switch:hover >li').css('display', 'block')
 						$('.smartmenu.sm-response-switch:before').css('opacity', '0.5')
 					}
-
 				});
+
 			}, 20)
 		});
 	</script>
@@ -1276,6 +1278,9 @@
 			}
 			.smartmenu>li.sm-active {
 				background: transparent;
+			}
+			.removedefaultHighlight {
+				background-color: transparent !important;
 			}
 		}
 	</style>
