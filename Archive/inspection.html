@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="robots" content="noindex, nofollow">
+  <title>XOXO Car - Multipoint Inspection Report</title>
+  <link rel="stylesheet" type="text/css" href="css/normalize.css">
+  <!-- ICOMOON FONTS -->
+  <link rel="stylesheet" type="text/css" href="css/icomoon.css">
+  <!-- MODAL CSS -->
+  <link rel="stylesheet" type="text/css" href="css/modulobox.min.css">
+  <!-- ANIMATE CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+  <!-- BOOTSTRAP CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+  <!-- CUSTOM CSS -->
+  <link rel="stylesheet" type="text/css" href="css/xoxo-styles.css">
+</head>
+<body id="top">
+  <section id="nav-wrapper" class="nav-wrapper sticky-top d-none d-lg-block py-2 mb-3 wow fadeInDown">
+  	<div class="container">
+		<div class="row d-flex align-items-center justify-content-between">
+			<div class="nav-col">
+		    	<img class="shop-logo logo" src="" alt="" height="50px">
+		    </div>
+		    <div class="nav-col text-center">
+		    	<div class="customer-name"></div>
+		        <div class="customer-vehicle tag"></div>
+		    </div>
+		    <div class="nav-col inspection-wrapper text-center">
+		        <div class="inspection-date"></div>
+		        <h1 class="h3 mb-0">Digital Inspection</h1>
+		    </div>
+		    <div class="nav-col">
+			    <table class="inspection-overview-table table table-responsive-xs text-center mb-0">
+		            <tbody>
+		              <tr>
+		                <td><span class="legend-passed color-legend"></span> <span class="count-passed"></span> Points Passed</td>
+		              </tr>
+		              <tr>
+		                <td><span class="legend-nonurgent color-legend"></span> <span class="count-nonurgent"></span> Points Non-Urgent</td>
+		              </tr>
+		              <tr>
+		                <td><span class="legend-urgent color-legend"></span> <span class="count-urgent"></span> Points Urgent</td>
+		              </tr>
+		            </tbody>
+		        </table>
+		    </div>
+		    <div class="nav-col">
+		    	<img src="images/xoxocar_logo.png" alt="XOXO Car logo" height="50px" class="xoxo-logo logo">
+		    </div>
+		</div>
+	</div>
+  </section>
+  <section id="mobile-nav-wrapper" class="mobile-nav-wrapper container sticky-top d-block d-lg-none">
+    <div class="row">
+      <div class="col-12 d-flex">
+        <span id="health-indicator-wrapper" class="health-indicator-wrapper align-self-center mr-auto wow bounceIn" data-wow-delay=".5s">
+          <a id="health-indicator" href="#top"><div class="health-indicator"></div></a>
+        </span>
+        <div id="health-indicator-callout" class="cta-wrapper d-flex align-self-center wow fadeInRight" data-wow-delay="1s">
+          <i class="icomoon align-self-center icon-caret-left"></i>
+          <div class="cta align-self-center">
+            <span class="cta-text px-2 p-1">Vehicle Health</span>
+          </div>
+        </div>
+        <img src="images/xoxocar_logo.png" alt="XOXO Car logo" height="40px" class="xoxo-logo logo d-flex align-self-center">
+        <button id="menu" class="menu ml-2 mobile-menu ml-2" >
+          <i class="icomoon icon-menu d-flex align-self-center"></i>
+        </button>
+      </div>
+    </div>
+    <div id="menu-panel-wrapper" class="menu-panel-wrapper">
+      <div id="menu-panel" class="menu-panel p-4 slideInRight" >
+        <h2 class="panel-title">Customer Name</h2>
+        <h3 id="panel-customer-name" class="h6 customer-name panel-customer-name panel-details"></h3>
+        <h2 class="panel-title">Vehicle</h2>
+        <h3 id="panel-customer-vehicle" class="h6 customer-vehicle panel-customer-vehicle panel-details"></h3>
+        <h2 class="panel-title">Plate Number</h2>
+        <h3 id="panel-customer-plate-number" class="h6 customer-plate-number panel-customer-plate-number panel-details"></h3>
+        <h2 class="panel-title">Mileage</h2>
+        <h3 id="panel-customer-vehicle-mileage" class="h6 customer-vehicle-mileage panel-customer-vehicle-mileage panel-details"></h3>
+        <h2 class="panel-title">VIN Number</h2>
+        <h3 id="panel-customer-VIN" class="h6 customer-VIN panel-customer-VIN panel-details"></h3>
+        <h2 class="panel-title">Shop Details</h2>
+        <h3 id="panel-shop-details" class="h6 shop-details panel-shop-details panel-details"></h3>
+        <a id="contact-shop" class="contact-shop btn btn-primary mt-2" href=""><i class="icomoon icon-phone mr-2"></i>Contact Shop</a>
+      </div>
+    </div>
+  </section>
+  <main id="intro-view" class="intro-view active d-block d-lg-none">
+    <header id="header" class="header container text-center pb-1">
+      <div class="row">
+        <div class="col-12 vehicle-bg fadeIn wow">
+        </div>
+        <div class="col-12">
+          <div id="inspection-date" class="inspection-date mt-3"></div>
+          <div id="inspection-title" class="inspection-title mt-1"></div>
+          <h1 class="h2">Digital Inspection</h1>
+          <div class="customer-name py-2 wow fadeInUp"></div>
+        </div>
+      </div>
+    </header>
+    <section id="customer-wrapper" class="customer-wrapper container py-3 text-center">
+      <div class="row">
+        <div class="col-12">
+          <h2 id="customer-name" class="h2 customer-name wow fadeInDown" data-wow-delay=".5s"></h2>
+          <div id="customer-vehicle" class="customer-vehicle tag wow fadeInUp" data-wow-delay=".5s"></div>
+          <div id="vehicle-health-wrapper" class="vehicle-health-wrapper">
+            <h2 id="vehicle-health-header" class="vehicle-health-header h6 mt-4 mb-2">Your Vehicle's Health</h2>
+            <div id="vehicle-health-meter" class="vehicle-health-meter d-flex align-items-end mx-auto"><i class="icomoon icon-caret-up health-meter-marker wow fadeIn"></i></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="vehicle-health-overview" class="vehicle-health-overview container">
+      <div class="row">
+        <div class="col-12 text-center">
+          <table id="inspection-overview-table" class="inspection-overview-table table table-responsive-xs text-center mt-5">
+            <tbody>
+              <tr>
+                <td class="wow fadeInLeft" data-wow-delay="2s"><span class="legend-passed color-legend"></span> <span id="count-passed" class="count-passed"></span> Points Passed</td>
+              </tr>
+              <tr>
+                <td class="wow fadeInRight" data-wow-delay="2.5s"><span class="legend-nonurgent color-legend"></span> <span id="count-nonurgent" class="count-nonurgent"></span> Points Non-Urgent</td>
+              </tr>
+              <tr>
+                <td class="wow fadeInLeft" data-wow-delay="3.25s"><span class="legend-urgent color-legend"></span> <span id="count-urgent" class="count-urgent"></span> Points Urgent</td>
+              </tr>
+            </tbody>
+          </table>
+          <a id="view-inspection" class="btn btn-primary my-3 wow fadeInUp" data-wow-delay="4s">View Inspection</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <div class="container">
+	  <div class="row">
+	  	<div class="col-lg-6 col-xl-5 d-none d-lg-block">
+	  		<div class="desktop-sidebar-wrapper">
+		  		<img class="vehicle-bg img-fluid img-thumbnail wow fadeInDown" data-wow-delay=".5s" data-wow-duration="1s" src="" style="width: 100%;">
+          <div class="desktop-table-wrapper mx-auto wow fadeInUp" data-wow-delay=".5s">
+            <ul class="nav nav-tabs justify-content-end">
+              <li class="nav-item">
+                <a id="tab-vehicle-overview" class="nav-link tab-vehicle-overview vehicle-overview link-overview active" data-tab="vehicle-overview" href="#"><i class="icomoon icon-car"></i></a></li>
+              <li class="nav-item">
+                <a id="tab-shop-overview" class="nav-link tab-shop-overview shop-overview link-overview " data-tab="shop-overview" href="#"><i class="icomoon icon-wrench-screwdriver"></i></a>
+              </li>
+            </ul>
+            <div class="desktop-table-content">
+    		  		<table id="desktop-vehicle-overview" class="table table-*-responsive desktop-vehicle-overview vehicle-overview desktop-table-overview active" data-wow-delay=".5s" data-wow-duration="1s">
+    		  			<thead>
+    		  				<th colspan="3">
+    		  					<div class="d-flex align-items-center justify-content-between">
+    		  						<span class="health-indicator-wrapper wow bounceIn" data-wow-delay=".5s"><div class="health-indicator"></div></span>
+    		  						<h2 class="h6 header customer-vehicle text-center mb-0"></h2>
+    		  						<div class="empty"></div>
+    		  					</div>
+    		  				</th>
+    		  			</thead>
+    		  			<tbody>
+    		  				<tr>
+    		  					<td>
+    		  						<h3 class="header h6 mb-0">Plate Number</h3>
+    		  						<span class="customer-plate-number"></span>
+    		  					</td>
+    		  					<td>
+    		  						<h3 class="header h6 mb-0">Mileage</h3>
+    		  						<span class="customer-vehicle-mileage"></span>
+    		  					</td>
+    		  					<td>
+    		  						<h3 class="header h6 mb-0">VIN Number</h3>
+    		  						<span class="customer-VIN"></span>
+    		  					</td>
+    		  				</tr>
+    		  			</tbody>
+    		  		</table>
+              <table id="desktop-shop-overview" class="table table-*-responsive desktop-shop-overview desktop-table-overview shop-overview" data-wow-delay=".5s" data-wow-duration="1s">
+              <thead>
+                <th colspan="2">
+                  <h2 class="h6 header shop-name text-center mb-0"></h2>
+                </th>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <h3 class="header h6 mb-0">Shop Address</h3>
+                    <span class="shop-address"></span>
+                  </td>
+                  <td>
+                    <h3 class="header h6 mb-0">Phone Number</h3>
+                    <span class="shop-phone-number"></span>
+                  </td>
+                </tr>
+              </tbody>
+              </table>
+            </div>
+          </div>
+		  	</div>
+		</div>
+	  	<div class="col-lg-6 col-xl-7 px-0">
+		  <section id="inspection-details-wrapper" class="inspection-details-wrapper container mb-3">
+		    <div class="row">
+		      <div class="col-12">
+		        <div id="utility-wrapper" class="utility-wrapper d-flex clearfix py-2 px-3">
+		          <h2 class="h6 header align-self-center mr-auto mb-0">Inspection Details</h2>
+		          <div class="filter-wrapper d-flex align-self-end">
+		            <div class="cta-wrapper d-flex align-self-center">
+		              <div class="cta align-self-center">
+		                <span class="cta-text p-1">Filter</span>
+		              </div>
+		              <i class="icomoon align-self-center icon-caret-right"></i>
+		            </div>
+		            <div class="filter-btn-wrapper">
+		              <button id="filter-passed" class="passed btn-filter active" data-decision="1"><i class="icomoon icon-check"></i></button>
+		              <button id="filter-nonurgent" class="nonurgent btn-filter active" data-decision="2"><i class="icomoon icon-check"></i></button>
+		              <button id="filter-urgent" class="urgent btn-filter active" data-decision="3"><i class="icomoon icon-check"></i></button>
+		            </div>
+		          </div>
+		        </div>
+		      </div>
+		      <div class="col-12">
+		        <div id="inspection-details" class="inspection-details"></div>
+		      </div>
+		    </div>
+		  </section>
+		</div>
+	  </div>
+  </div>
+  <div id="footer-push" class="footer-push d-block d-lg-none"></div>
+  <footer id="footer" class="container-fluid d-block d-lg-none">
+    <div class="row">
+      <div class="col-12">
+        <img id="shop-logo" class="shop-logo logo mx-auto d-block py-2" src="" alt="" height="75px">
+      </div>
+    </div>
+  </footer>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="js/smooth-scroll.js"></script>
+  <script type="text/javascript" src="js/wow.min.js"></script>
+  <script type="text/javascript" src="js/xoxo-inspection.js"></script>
+  <script type="text/javascript" src="js/xoxo-animate.js"></script>
+  <script type="text/javascript" src="js/modulobox.min.js"></script>
+  <script type="text/javascript" src="js/isotope.min.js"></script>
+  <script type="text/javascript" src="js/imagesloaded.min.js"></script>
+  <script type="text/javascript">
+    //requires wow.min.js
+    new WOW().init();
+  </script>
+</body>
+</html>
